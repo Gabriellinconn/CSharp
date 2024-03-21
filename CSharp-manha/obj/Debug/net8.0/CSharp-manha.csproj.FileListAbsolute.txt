@@ -1,0 +1,15 @@
+C:\_ws\C#\CSharp-manha\bin\Debug\net8.0\CSharp-manha.exe
+C:\_ws\C#\CSharp-manha\bin\Debug\net8.0\CSharp-manha.deps.json
+C:\_ws\C#\CSharp-manha\bin\Debug\net8.0\CSharp-manha.runtimeconfig.json
+C:\_ws\C#\CSharp-manha\bin\Debug\net8.0\CSharp-manha.dll
+C:\_ws\C#\CSharp-manha\bin\Debug\net8.0\CSharp-manha.pdb
+C:\_ws\C#\CSharp-manha\obj\Debug\net8.0\CSharp-manha.GeneratedMSBuildEditorConfig.editorconfig
+C:\_ws\C#\CSharp-manha\obj\Debug\net8.0\CSharp-manha.AssemblyInfoInputs.cache
+C:\_ws\C#\CSharp-manha\obj\Debug\net8.0\CSharp-manha.AssemblyInfo.cs
+C:\_ws\C#\CSharp-manha\obj\Debug\net8.0\CSharp-manha.csproj.CoreCompileInputs.cache
+C:\_ws\C#\CSharp-manha\obj\Debug\net8.0\CSharp-manha.dll
+C:\_ws\C#\CSharp-manha\obj\Debug\net8.0\refint\CSharp-manha.dll
+C:\_ws\C#\CSharp-manha\obj\Debug\net8.0\CSharp-manha.pdb
+C:\_ws\C#\CSharp-manha\obj\Debug\net8.0\CSharp-manha.genruntimeconfig.cache
+C:\_ws\C#\CSharp-manha\obj\Debug\net8.0\ref\CSharp-manha.dll
+C:\_ws\C#\CSharp-manha\obj\Debug\net8.0\CSharp-manha.sourcelink.json
