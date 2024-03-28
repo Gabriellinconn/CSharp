@@ -1,0 +1,8 @@
+###
+
+GET http://localhost:5169/produto/listar
+
+###
+
+
+GET http://localhost:5169/produto/cadastrar
