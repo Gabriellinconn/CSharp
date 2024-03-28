@@ -1,14 +1,35 @@
 namespace API.Models;
 
-// public class Produto
-// {
-//     private string nome;
-//     private string descricao;
+public class Produto
+{
+//construtor
+public Produto(){ }
 
-//     public void setNome(string nome){
-//         this.nome = nome;
-//     }
-//     public string getNome(){
-//         return this.nome;
-//     }
-// }
+public Produto (string nome, string descricao, double valor){
+
+    Nome = nome;
+    Descricao = descricao;
+    Valor = valor;
+}
+
+
+
+
+    public string? Nome { get; set; }
+    public string? Descricao { get; set; }
+
+    public double Valor { get; set; }
+
+    // em JAVA =
+    //     private string nome;
+    //     private string descricao;
+
+    //     public void setNome(string nome){
+    //         this.nome = nome;
+    //     }
+    //     public string getNome(){
+    //         return this.nome;
+    //     }
+
+
+}

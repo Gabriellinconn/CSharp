@@ -1,24 +1,50 @@
+using API.Models;
+using Microsoft.AspNetCore.Mvc;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-// Produto produto = new Produto();
 // produto.setNome("Bolacha");
 // Console.WriteLine(produto.getNome());
 
 
-List<Produto> produtos = new List<Produto>();
-produtos.Add(new Produto("Celular", "IOS"));
-produtos.Add(new Produto("Celular", "Android"));
-produtos.Add(new Produto("Celular", "Motorola"));
-produtos.Add(new Produto("Celular", "Xaiomi"));
+
+
+List<Produto> produtos =
+[
+    new Produto("Celular", "IOS", 1000),
+    new Produto("Celular", "Android", 400),
+    new Produto("Televisao", "samsung",5000),
+    new Produto("Celular", "Xaiomi",755.6),
+];
 
 
 app.MapGet("/", () => "API DE PRODUTOS ");
 
-app.MapGet("/produto/listar", () => "LISTAGEM DE PRODUTOS ");
+app.MapGet("/produto/listar", () => produtos);
+
+app.MapGet("/produto/buscar/{nome}", ([FromRoute] string nome) =>
+{
+    for (int i = 0; i < produtos.Count; i++)
+    {
+        if (produtos[i].Nome == nome)
+        {
+            return Results.Ok(produtos[i]) ;
+        }
+    }
+    return Results.NotFound("Produto não encontrado!");
+});
+
 
 app.MapPost("/produto/cadastrar", () => "CADASTRO DE PRODUTOS");
 
+//Exercicios
+//1)cadastrar um produto
+//a)pela url
+//b)pelo corpo
+//2)remoção do produto
+//3)Alteração do Produto
+
 app.Run();
 
-record Produto(string nome, string descricao);
+// record Produto(string nome, string descricao);

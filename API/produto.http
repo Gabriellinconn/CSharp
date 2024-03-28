@@ -1,8 +1,12 @@
 ###
 
-GET http://localhost:5169/produto/listar
+GET http://localhost:5000/produto/listar
 
 ###
 
 
-GET http://localhost:5169/produto/cadastrar
+GET http://localhost:5000/produto/cadastrar
+
+###
+
+GET http://localhost:5000/produto/buscar/Televisao
