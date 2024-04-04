@@ -10,7 +10,7 @@ var app = builder.Build();
 
 
 
-List<Produto> produtos =
+List <Produto> produtos =
 [
     new Produto("Celular", "IOS", 1000),
     new Produto("Celular", "Android", 400),
@@ -36,7 +36,16 @@ app.MapGet("/produto/buscar/{nome}", ([FromRoute] string nome) =>
 });
 
 
-app.MapPost("/produto/cadastrar", () => "CADASTRO DE PRODUTOS");
+app.MapPost("/produto/cadastrar/{nome}/{descricao}/{valor}", 
+([FromRoute] string nome, [FromRoute] string descricao, [FromRoute] double valor) => {
+
+    Produto produto = new Produto(nome, descricao, valor);
+
+    produtos.Add(produto);
+    return Results.Created("", produto);
+});
+
+
 
 //Exercicios
 //1)cadastrar um produto

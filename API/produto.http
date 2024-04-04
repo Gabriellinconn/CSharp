@@ -10,3 +10,7 @@ GET http://localhost:5000/produto/cadastrar
 ###
 
 GET http://localhost:5000/produto/buscar/Televisao
+
+###
+
+POST http://localhost:5000/produto/cadastrar/arroz/alimento/10
