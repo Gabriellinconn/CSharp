@@ -10,7 +10,7 @@ var app = builder.Build();
 
 
 
-List <Produto> produtos =
+List<Produto> produtos =
 [
     new Produto("Celular", "IOS", 1000),
     new Produto("Celular", "Android", 400),
@@ -29,20 +29,49 @@ app.MapGet("/produto/buscar/{nome}", ([FromRoute] string nome) =>
     {
         if (produtos[i].Nome == nome)
         {
-            return Results.Ok(produtos[i]) ;
+            return Results.Ok(produtos[i]);
         }
     }
     return Results.NotFound("Produto não encontrado!");
 });
 
 
-app.MapPost("/produto/cadastrar/{nome}/{descricao}/{valor}", 
-([FromRoute] string nome, [FromRoute] string descricao, [FromRoute] double valor) => {
-
-    Produto produto = new Produto(nome, descricao, valor);
+app.MapPost("/produto/cadastrar",
+([FromBody] Produto produto) =>
+{
 
     produtos.Add(produto);
     return Results.Created("", produto);
+});
+
+app.MapDelete("/Produto/excluir/{nome}",
+ ([FromRoute] string nome) => {
+
+    for (int i = 0; i < produtos.Count; i++)
+    {
+        if (produtos[i].Nome == nome){
+            produtos.Remove(produtos[i]);
+            return Results.Ok(produtos);
+
+        }
+    }
+    return Results.NotFound("Produto não encontrado");
+});
+
+app.MapPut("/Produto/alterar/{nome}",
+ ([FromRoute] string nome, string descricao, double valor) =>{
+
+    for(int i=0; i<produtos.Count;i++){
+        if(produtos[i].Nome == nome){
+            produtos[i].Nome= nome;
+            produtos[i].Descricao = descricao;
+            produtos[i].Valor = valor;
+
+            return Results.Ok(produtos[i]);
+        }
+    }
+    
+
 });
 
 

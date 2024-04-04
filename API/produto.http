@@ -13,4 +13,26 @@ GET http://localhost:5000/produto/buscar/Televisao
 
 ###
 
-POST http://localhost:5000/produto/cadastrar/arroz/alimento/10
+POST http://localhost:5000/produto/cadastrar
+Content-Type: application/json
+
+{
+    "nome": "molhoDeTomate",
+    "descricao": "Alimento",
+    "valor": 7
+}
+
+###
+
+DELETE http://localhost:5000/produto/excluir/Celular
+
+###
+
+PUT http://localhost:5000/produto/alterar/molhoDeTomate
+Content-Type: application/json
+
+{
+    "nome": "Macarrao",
+    "descricao": "Alimento",
+    "valor": 12
+}
